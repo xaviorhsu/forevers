@@ -1,0 +1,389 @@
+<!-- -----------------------------------------------herder_info start--------------------------------------------------------------- -->      
+<style>
+  #div_Hd1{
+     width:920px; height:37px; margin: 0px; background: url(images/karasumi_05.jpg) no-repeat; font-size: 14px; font-family:"微軟正黑體", "新細明體"; font-weight:bold; color:#7F000C; 
+  }
+  #div_Hd2{
+      width:920px; height:115px; margin:0px auto;
+  }
+  #div_Hd1 a { background-color:#FFFFCC; text-decoration:none; border:4px solid silver; color:#660000; }
+  #uh #uhj{ float:right; margin:0; list-style:none; padding:0;  }  
+  #uh li,  #uhj li{ float:right; padding: 10px 5px; text-align:center; list-style:none;  }
+  #uv3 li, #uv4 li{ margin-top: 2px; padding: 10px 1px; text-align:center; list-style:none;  }
+  #uh li:hover, #uh a:active,#uhj li:hover, #uhj a:active { color: #CCCCFF; background-color: #CCFF88; }
+  #uv3 li:hover, #uv3 a:active,#uv4 li:hover, #uv4 a:active { color: #CCCCFF; background-color: #FFCDA6; }
+</style> 
+<script type="text/javascript" src="css/md5.js"></script>
+<script type="text/javascript" language="javascript">
+var Bd6=null; vaL1=null; vaL2=null; vaL3=null; vaL4=null;
+var odRd={'piNo':vaL1,'piDs':vaL2,'piPr':vaL3,'piCn':vaL4};
+    HTTP_IP='supreme0155-4.myweb.hinet.net/forevers/';            //  114.33.140.96/forevers/        websrv.local.tw/forevers/
+// =========================================================================================
+$(document).ready(function()  {
+    var type=(Math.floor(Math.random()*2)==1)?'fade':'slide';
+    $('#div2').innerfade({
+                  	animationtype: type,
+                    speed: 2000,
+                  	timeout: 3500,      
+                  	type: 'sequence',   
+                  	containerheight: '320px' });
+// --------------------------------------------------------------------------------------------     
+    var actItem=["li_mm2","li_mm3","li_mm4","li_mm5","li_mm6","li_mm7","li_jj1","li_jj2","li_jj3","li_jj4","li_jj5","li_jj6"];
+    var mainitem=["div_Bd0","div_Bd1","div_Bd2","div_Bd3","div_Bd4","div_Bd5","div_Bd6","div_Bd7"]; 
+    $('#li_mm1,#li_mm2,#li_mm3,#li_mm4,#li_mm5,#li_mm6,#li_mm7,#li_jj5,#li_jj6,#uv3 li,#uv4 li').click(function(){
+      
+        for(var k in actItem) { if ($(this).attr("id")==actItem[k]) {
+          $("#li_mm2,#li_mm3,#li_mm4,#li_mm5,#li_mm6,#li_mm7,#li_jj1,#li_jj2,#li_jj3,#li_jj4,#li_jj5,#li_jj6").css('background-color','');  
+          $(this).css('background-color','pink'); break;} }
+      
+        $('#div_Bd31,#div_Bd32,#div_Bd41,#div_Bd42').css('display','none');
+        $('#div_Bd0,#div_Bd1,#div_Bd2,#div_Bd3,#div_Bd4,#div_Bd5,#div_Bd6,#div_Bd7,#div_Bdj,#uhj').css('display','none');
+        chgbanpic();
+        if ($(this).attr("id")=='uv3'){ $("#li_mm2,#li_mm3,#li_mm4,#li_mm5,#li_mm6,#li_mm7").css('background-color','');
+                                        $("#li_mm3").css('background-color','pink');}
+        if ($(this).attr("id")=='uv4'){ $("#li_mm2,#li_mm3,#li_mm4,#li_mm5,#li_mm6,#li_mm7").css('background-color','');
+                                        $("#li_mm4").css('background-color','pink');}
+        if ($(this).attr("id")=='li_mm1')
+              { $('#li_jj1,#li_jj2,#li_jj3,#li_jj4,#li_jj5,#li_jj6').css('background-color','');
+                $('#uh,#div_Bd').css('display','none'); $('#uhj,#div_Bdj,#div_Bd1').css('display','block'); }
+        else  { $('#li_mm1').attr("href","index.html").text("首　 　頁"); $('#div_Bd').css('display','block');     
+                switch ($(this).text()) {
+                        case '購物流程'    :{i=4;j=0;} break; case '購物方式'    :{i=4;j=1;} break; case '消費爭議':{i=4;j=2;} break;
+                        case '烏魚子的由來':{i=3;j=0;} break; case '烏魚子的保存':{i=3;j=1;} break;
+                        case '烏魚子的料理':{i=3;j=2;} break; case '台灣的烏魚子':{i=6;j=0;dStr="台灣烏魚子";} break;
+                        case '台 湾 直 送' :{i=6;j=0;$('#uhj').css('display','block');dStr="日本への配送";} break;     //日本への配送
+                        case 'ロッグイン'  :{i=7;j=0;$('#uhj').css('display','block');} break;                         //會員登(加)入
+                        default            :{var i=($(this).attr("id").substring(5));j=0; }  break;
+                }      
+                $('#'+mainitem[i]+((j==0)?'':j)).css('display','block'); Bd6=(i==6)?true:false;
+                if($(this).text()=='選購產品')  dStr="熱賣促銷商品";                
+                $('#spnn').html('<a href="javascript:;">'+dStr+'</a>');
+              }
+              
+        if (Bd6)  {
+                    $("#div_Hd2 img").attr("src","images/proimg/F09_0.jpg");
+                    $("#div_Fd1,#div_Bd").css('display','none');
+                    if($("#tbL2").is(":visible")) {
+                      var tbl=document.getElementById('tbL22');
+                      for(i=tbl.rows.length-2;i>0;i--){tbl.deleteRow(i);}
+                      $("#tbL2").css('display','none'); $('#tbL1,img[src*="buy1c"]').css('display','block');//$('img[src*="buy1c"]').show();
+                    }
+                  }
+        else      { $("#div_Fd1").css('display','block'); }
+    });
+// --------------------------------------------------------------------------------------------
+    var mainjitem=["div_Bd","div_Bj1","div_Bj2","div_Bj3","div_Bj4","div_Bj5"];
+    $('#li_jj0,#li_jj1,#li_jj2,#li_jj3,#li_jj4').click(function(){
+      
+        for(var k in actItem) { if ($(this).attr("id")==actItem[k]) {
+          $('#li_jj1,#li_jj2,#li_jj3,#li_jj4,#li_jj5,#li_jj6').css('background-color','');          
+          $(this).css('background-color','pink'); break;} }
+          
+        $('#div_Bd1,#div_Bj11,#div_Bj21,#div_Bj31,#div_Bj41,#div_Bd6,#div_Bd7,#div_Bd').css('display','none');
+        $('#div_Bdj').css('display','block');        
+        
+        var i=($(this).attr("id").substring(5)); j=(i==0)?0:1;
+        if(i==0) {  $('#div_Bdj,#uhj').css('display','none');
+                    $('#li_mm1').attr("href","javascript:;").text("日本語首頁");
+                    $('#'+mainjitem[i]+',#uh').css('display','block');
+                 }
+        $('#'+mainjitem[i]+j).css('display','block');
+        
+        chgbanpic();
+    });
+// ----------------------------------------------------------------------------------------
+    var param1=loadStorage_S('fRec1'); $('#fRec1').val((param1)?param1:"");                                 //alert(param1);
+    $('#tbL1 tbody tr td div').click(function(){
+
+        var axstr=$(this).text().split("　");
+        if  ( confirm('將商品　『編號 '+axstr[0]+' ==> '+axstr[2]+'』　加入購物車'))
+          { var odRd=[];
+            odRd.push(axstr[0]);odRd.push(axstr[2]);odRd.push(axstr[1].substring(1,axstr[1].length));odRd.push("1;");
+            $('#fRec1').val($('#fRec1').val()+odRd); saveStorage_S('fRec1');
+          }
+    });
+// --------------------------------------------------------------------------------------------
+    $("#tbL22 thead tr").css({'background-color':'orange','color':'brown','margin-top':'6px'});
+   
+    $('img[src*="buy1c"]').click(function(){
+        $("#tbL1,#tbL23,#pBtn3,#tbL24,#pBtn4").css('display','none'); $("#tbL2").css('display','block');
+        if($("#tbL2").is(":visible"))        
+        { 
+          var param1=(loadStorage_S('fRec1'))?loadStorage_S('fRec1'):"";  data=param1.split(";");
+          len=(param1!="")?data.length:0;                                                                   //alert(param1+"<==>"+len);          
+          if (len) { $('img[src*="buy1c"]').hide(); $("#tbL21,#tbL22,#pBtn2").css('display','block');
+          for(var k=1;k<len;k++)
+              { 
+                var tdata=data[k-1].split(",");
+                var tr=document.getElementById('tbL22').insertRow(k);
+                var ranval=(Math.floor(Math.random()*100));                                
+                var mypronu=new Date().getTime()+ranval; trid="trid"+mypronu;
+                tr.id=trid; tr.align="right";
+                for(var j=0;j<tdata.length+1;j++) {                                    
+                    var td=tr.insertCell(j);str=tdata[j];
+                    switch (j) { case 0:td.align="center";break;
+                                 case 1:td.align="left";break;
+                                 case 3:td.align="center";                                        
+                                        str='<select onchange="subtot(this,'+mypronu+');">';
+                                        for(var i=1;i<=10;i++) { var tt=(tdata[j]==i)?"selected":""; str+='<option value="'+i+'" '+tt+'>'+i+'</option>';}
+                                        str+='</select>';
+                                        break;
+                                 case 4:str=tdata[j-2]*tdata[j-1];break;
+                                 default :break;}                                      
+                    td.innerHTML=str;
+                  }
+                var td=tr.insertCell(j); td.align="center"; td.innerHTML='<a href="javascript:;" onClick="trde('+mypronu+')" >刪除</a>';
+              }
+          $('#tbL22 tbody tr:odd').css('background-color','#FFEFDF');
+          $('#tbL22 tbody tr:even').css('background-color','#FFFFE6');
+          amtSum("tbL22","tcnt","tamt");
+        }
+        else { $("#tbL2,#tbL21,#tbL22,#pBtn2").css('display','none'); alert("購物車是空的，請先選購商品。"); $("#tbL1").css('display','block'); }
+        }        
+    });
+    // ------------------------------------//   
+    $("p #btn21").click(function(){
+        if( savepRecs() ) {
+          var options = "cjo6=A&actid=4103";
+          var url     = "http://"+HTTP_IP+"PF4evs/Fecpay.php";
+          callAjaxDo("atm_no",'p',url,options);
+          //var url     = "http://"+HTTP_IP+"PF4evs/Fecpay.php?jsonp=?";
+          //callAjaxDo("atm_no",'s',url,options);
+          //$('#atm_no').html("026100013000");
+          
+          $("#tbL22 :input").attr({disabled:true}); $("#tbL22 tbody tr:not(:last) a").hide();
+          $("#pBtn2").css('display','none'); $("#tbL2A").css('display','block');
+          $("#agree_Y,#agree_N").attr({checked:false,disabled:false});
+        }
+        else { $("#tbL2").css('display','none'); alert("購物車是空的，請先選購商品。"); $("#tbL1").css('display','block');$('img[src*="buy1c"]').show(); }
+    });
+    // ------------------------------------//      
+    $("#btn22").click(function(){
+        savepRecs()
+        var tbl=document.getElementById('tbL22');
+        for(i=tbl.rows.length-2;i>0;i--) { tbl.deleteRow(i);  }
+        $("#tbL2").css('display','none'); $("#tbL1").css('display','block');$('img[src*="buy1c"]').show();
+    });    
+    $("#btn23").click(function(){
+        var tbl=document.getElementById('tbL22');
+        for(i=tbl.rows.length-2;i>0;i--) { tbl.deleteRow(i);  }        
+        $('#fRec1').val(""); saveStorage_S('fRec1');
+        $("#tbL2,#tbL21,#tbL22,#pBtn2").css('display','none'); $("#tbL1").css('display','block');$('img[src*="buy1c"]').show();  
+    });
+// --------------------------------------------------------------------------------------------
+    $('#country1').change(function(){
+      if(this.value=="臺灣")  { $('#addres2').val(''); $('#sp22').hide(); $('#sp11,#sp12').show();}
+      else  { $('#addres1').val(''); $('#sp11,#sp12').hide(); $('#sp22').show();}
+    });
+// --------------------------------------------------------------------------------------------
+    $('#country2').change(function(){
+      if(this.value=="臺灣")  { $('#address2').val(''); $('#sp42').hide(); $('#sp31,#sp32').show();}
+      else  { $('#address1').val(''); $('#sp31,#sp32').hide(); $('#sp42').show();}
+    });
+// --------------------------------------------------------------------------------------------
+    $("p #btn31").click(function(){
+        var xinsiteA=$('#tbL23 thead :input[name="invo"]:checked').val();
+        var xinsiteB=$('#isneed').val();
+        var xinsiteC=$("#country1 :selected").val().substr(0);
+        var addr=($('#country1 :selected').val()=="臺灣")?"xaddres1":"xaddres2";
+        var id_array=($("#invo3").is(":checked"))?
+            [xinsiteA,xinsiteB,"xname","xbirday","xcellphone","xtelephone","xemail",xinsiteC,addr,"xfname","xfirmid"]
+            :[xinsiteA,xinsiteB,"xname","xbirday","xcellphone","xtelephone","xemail",xinsiteC,addr,"xnoitem","xnoitem"];
+        var result2=chk_form('0',id_array);
+        result2=(result2)?result2.substr(0,result2.length-1)+';':"";
+        
+        if(result2)
+        {   
+            $('#fRec2').val(result2); saveStorage_S('fRec2');                                            //alert($('#fRec2').val());
+            var xinsiteC=$("#country2 :selected").val().substr(0);
+            var addr=($('#country2 :selected').val()=="臺灣")?"xaddress1":"xaddress2";
+            var id_array=['xnam2',"xnoitem",'xcellphon2',"xtelephon2",'xemai2',xinsiteC,addr,'xfnam2',"xnoitem"];
+            var result3=chk_form('0',id_array);
+            result3=(result3)?result3.substr(1,result3.length-2)+';':"";
+                       
+            if(result3)
+            {
+              var options = "cjo6=O";
+              //var url     = "http://"+HTTP_IP+"PF4evs/Fecpay.php";
+              //callAjaxDo("od_no",'p',url,options);
+              var url     = "http://"+HTTP_IP+"PF4evs/Fecpay.php?jsonp=?";                    
+              callAjaxDo("od_no",'s',url,options);
+              
+              /**ymdhms=show_today(); ranval=(Math.floor(Math.random()*100)); ranval=ranval<10?('0'+ranval):ranval;
+              var orderNo='F'+(ymdhms[0]-2000)+ymdhms[2]+ymdhms[3]+ymdhms[5]+ymdhms[6]+ymdhms[7]+ranval;              
+              $('#od_no,#od_no1').text(orderNo);=========== **/
+              
+              $("#pBtn3").css('display','none'); $("#tbL24,#pBtn4").css('display','block');
+              $("#tbL23 :input").attr({disabled:true}); $("#agree_Y,#agree_N").attr({disabled:true});
+              $('#fRec2').val($('#fRec2').val()+result3);  saveStorage_S('fRec2');                       //alert($('#fRec2').val());
+              $('#atmno').val($("#atm_no").text());
+              if (parseInt($("#tamt").text()) > 30000) { $("#paytype4_c,#paytype4_d").attr({checked:false,disabled:true}); }
+            }
+        }
+    });      
+    $("p #btn32").click(function(){
+        $(".Fbg14").removeClass('pdata'); $("#agree_Y,#agree_N").attr({checked:false,disabled:false});
+        $("#tbL2A,#tbL23,#pBtn3").css('display','none'); $("#pBtn2").css('display','block');
+        $("#tbL22 :input").attr({disabled:false}); $("#tbL22 tbody tr:not(:last) a").show();
+    });  
+// --------------------------------------------------------------------------------------------
+    /*$("p #btn41").click(function(){
+        var id_array=["xpaytype4"];
+        var result=chk_form(0,id_array);
+        if (result) { return true; }
+        else		return false;
+    });*/
+    $("p #btn42").click(function(){
+        $("#tbL24 :radio").attr({checked:false});
+        $('#s4I1,#s4I2,#s4I3,#s4I4').removeClass('pdata').removeClass('peata');
+        $("#tbL24,#pBtn4").css('display','none');  $("#pBtn3").css('display','block');
+        $("#tbL23 :input").attr({disabled:false}); $('#od_no,#od_no1').text("Fxxxxxxxxx");
+    });  
+// --------------------------------------------------------------------------------------------
+});
+// ============================================================================================
+
+function same_one() {
+  if ( $("#sameguy").is(":checked") ) { $('#nam2').val($('#name').val()); $('#cellphon2').val($('#cellphone').val());
+                                        $('#telephon2').val($('#telephone').val()); $('#emai2').val($('#email').val());                                        
+                                        $('#country2').val($('#country1').val());
+                                        
+                                        if($('#country1').val()=="臺灣") {
+                                           $('#sp42').hide(); $('#sp31,#sp32').show();
+                                           $('#PostNo2').val($('#PostNo1').val());
+                                           showZone(document.getElementById('City2'), document.getElementById('Canton2'),$('#PostNo2').val());
+                                           $('#address1').val($('#addres1').val());
+                                             }
+                                        else { $('#sp31,#sp32').hide(); $('#sp42').show(); $('#address2').val($('#addres2').val()); }
+                                        
+                                        $('#fnam2').val($('#fname').val());
+                                         
+                                        $('#xnam2,#xcellphon2,#xtelephon2,#xemai2,#xcountry2,#xaddress,#xfnam2').removeClass('pdata');
+                                        $('#isneed').val('1').attr({checked:false,disabled:true}); }
+  else { $('#nam2,#cellphon2,#telephon2,#emai2,#address1,#address2,#fnam2').val(''); $('#isneed').attr({disabled:false}); }
+}
+function subtot(cur,id) {
+    var newno=$(cur).val();
+    var tD=$("#trid"+id+" td").eq(2).text();
+    var tmpamt=tD*newno;
+    $("#trid"+id+" td").eq(4).text(tmpamt);
+    amtSum("tbL22","tcnt","tamt");
+}
+function trde(e) {
+    $('#trid'+e+'').remove();
+    amtSum("tbL22","tcnt","tamt");
+}
+function amtSum(tbl,idcnt,idamt) {
+    var tCnt=0; tAmt=0;
+    var tritem=$('#'+tbl+' tbody tr').size();
+    for(k=1;k<tritem;k++)
+          {
+            var tmpcnt=$('#'+tbl+' tr:eq('+k+') td:eq(3) :selected').val();
+            tCnt+=parseInt(tmpcnt);
+            var tD4=$("#"+tbl+" tr:eq("+k+")").find("td").get(4);
+            tAmt+=parseInt(tD4.innerHTML);
+          }
+          tno=(tCnt)?tCnt:""; tmt=(tAmt)?tAmt:"";
+          $("#"+idcnt+",#pre"+idcnt).text(tno);$("#"+idamt+",#pre"+idamt).text(tmt);
+}
+function savepRecs() {
+        var tbl=document.getElementById('tbL22');
+        if (tbl.rows.length>2) {
+          var tdno=$('#tbL22 thead tr th').size();
+          $('#fRec1').val("");
+          for(i=tbl.rows.length-2;i>0;i--) {
+            var odRd="";       
+            for(k=0;k<tdno-2;k++)
+              { 
+                ortd=(k==3)?$("#tbL22 tr:eq("+i+") td:eq(3) :selected").val():$("#tbL22 tr:eq("+i+") td:eq("+k+")").html()+",";
+                odRd+=ortd;
+              }          
+            $('#fRec1').val(odRd+';'+$('#fRec1').val());
+            }
+          saveStorage_S('fRec1'); return true; }
+        else { $('#fRec1').val(""); saveStorage_S('fRec1'); return false; }
+}
+function paytypecheck() {
+        var xinsiteA=$("#date_y").text()+"/"+$("#date_m :selected").val()+"/"+$("#date_d :selected").val();
+        var xinsiteB=$("#time_D :selected").val();
+        var xinsiteC=$('#od_no').text();
+        var xinsiteD=$('#trdate').text();
+        var id_array=[xinsiteA,xinsiteB,xinsiteC,xinsiteD,"xpaytype4"];
+        var result4=chk_form(0,id_array);        
+        result4=(result4)?(result4.substr(1,result4.length-1)):"";
+        if (result4)  {
+          $('#fRec2').val(loadStorage_S('fRec2')+result4);                                            //alert($('#fRec2').val());
+          //saveStorage_S('fRec2');
+          /*var a= document.location.href; var n1=a.lastIndexOf('/');  var n2=a.substring(0,n1).lastIndexOf('/')+1;
+          alert('<== '+a+" ==>");alert('<== '+n1+" ==>");alert('<== '+a.substring(0,n1)+" ==>"); alert('<== '+a.substring(0,n2)+" ==>"); 
+          top.location="http://"+HTTP_IP+"PF4evs/Fecpay.php?cjo6=P&home="+a.substring(0,n2)+"index.html";*/
+                      return true; }
+        else          return false;
+}
+</script>
+
+<div id="div_Hd1" style="z-index:5;">
+<ul id="uh">
+    <li><a id="li_mm7" href="javascript:;" >會員登(加)入</a>
+        <!--<a id="" href="javascript:;" >會員服務GO!</a>-->
+        <select  name="memsrv" id="memsrv" size="1" style="margin-top: 7px; border:5px solid silver;display:none;color:darkgreen;background-color:yellow ;">
+          <option value="1" >訂單查詢</option>
+          <option value="2" >資料修改</option>
+          <option value="3" >密碼變更</option>
+        </select>
+    </li>
+    <li><a id="li_mm6" href="javascript:;" >選購產品</a></li>
+    <li><a id="li_mm5" href="javascript:;" >聯絡資訊</a></li>
+    <li><a id="li_mm4" href="javascript:;" >購物說明</a>
+    <ul id="uv4" style="display:none; position:absolute;">
+        <li><a href="javascript:;">消費爭議</a></li>
+        <li><a href="javascript:;">購物方式</a></li>
+        <li><a href="javascript:;">購物流程</a></li>
+    </ul>
+<script language="Javascript">
+jQuery("#li_mm4,#uv4 li").mouseover(function(){jQuery("#uv4").show();}).mouseout(function(){jQuery("#uv4").hide();});
+</script>
+    </li>
+    <li><a id="li_mm3" href="javascript:;" >安久號烏魚子</a>
+    <ul id="uv3" style="display:none; position:absolute;">
+        <li><a href="javascript:;" >台灣的烏魚子</a></li>
+        <li><a href="javascript:;" >烏魚子的料理</a></li>
+        <li><a href="javascript:;" >烏魚子的保存</a></li>
+        <li><a href="javascript:;" >烏魚子的由來</a></li>
+    </ul>
+<script language="Javascript">
+jQuery("#li_mm3,#uv3 li").mouseover(function(){jQuery("#uv3").show();}).mouseout(function(){jQuery("#uv3").hide();});
+</script>
+    </li>
+    <li><a id="li_mm2" href="javascript:;" >安久號簡介</a></li>
+    <li><a id="li_mm1" href="javascript:;" >日本語首頁</a></li> <!--<li><a id="li_mm0" href="index.html"    ></a></li>-->
+</ul>
+<ul id="uhj" style="display: none;" >
+    <li><a id="li_jj6" href="javascript:;" title="會員登(加)入" >ロッグイン</a></li>    
+    <li><a id="li_jj5" href="javascript:;" title="日本への配送" >台 湾 直 送</a></li>
+    <li><a id="li_jj4" href="javascript:;" title="烏魚子的保存" >からすみの保存</a></li>
+    <li><a id="li_jj3" href="javascript:;" title="烏魚子的料理" >からすみの料理</a>
+    <li><a id="li_jj2" href="javascript:;" title="安久號烏魚子" >からすみの由來</a></li>
+    <li><a id="li_jj1" href="javascript:;" title="關於安久號"   >安久号の紹介</a>
+    <li><a id="li_jj0" href="javascript:;" title="首頁" >繁体版首頁</a></li>
+</ul>
+</div>
+
+<div id="div_Hd2" align="left">
+    <img style="position:absolute; z-index:-2;" src="images/karasumi_main_vi1.jpg" width="920" height="115" />
+    <table border="0" style=" margin-top: 25px; position:absolute;z-index:0;" width="920" >      
+      <tr>
+      <td align="right" ><span id="mbName" style="font-weight: bold; background-color: #CCFF88;color: gray;"></span></td>
+      </tr>
+    </table>              
+</div>
+<script type="text/javascript">
+
+function whichway(way,page)  {  document.location.href='?ul='+way+'&page='+page; }
+
+function chgbanpic() {
+    var current_pic=Math.floor(Math.random()*4);
+    $("#div_Hd2 img").attr("src","images/karasumi_main_vi"+current_pic+".jpg");
+}    
+</script>
+<!-- ------------------------------------------------ header_info end --------------------------------------------------------------- -->

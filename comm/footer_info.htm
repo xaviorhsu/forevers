@@ -1,0 +1,55 @@
+<!-- ----------------------------------------------------footer start --------------------------------------------------------- -->
+<style>
+  #div_Fd1{
+      width:920px; height:33px; margin:0px auto; background:url(images/karasumi_mainbk.gif) ;
+  }
+  #div_Fd2{
+      width:920px; height:38px;  margin: 0px auto; background: url(images/karasumi_14.jpg) ; font-size: 12px; font-family: "微軟正黑體", "新細明體"; font-weight: bold; color: orange;
+  }
+  #div_Fd2 a { text-decoration:none; }
+</style>
+
+<script type="text/javascript" language="javascript">
+$(document).ready(function()  {
+  if (getUrlVars("ul")&&getUrlVars("ul")=="uh")  $("#li_mm6").trigger("click");
+  if (getUrlVars("ul")&&getUrlVars("ul")=="uhj") {$('#uh').css('display','none'); $("#li_jj5").trigger("click");}
+});
+// ------------------------------------------------------------------------------- //  
+function up(obj)  {  obj.value = obj.value.toUpperCase();  }
+// ------------------------------------------------------------------------------- //
+function chkconf()  {
+    var Actcode=$('#psp2 :input[type=text]').val(); var Pwscode=$('#psp2 :input[type=PASSWORD]').val();
+    if(Actcode == ''||Pwscode == '') { alert('請填寫帳號及密碼'); }
+    else  {
+            var options = "cjo6=M&Act="+Actcode+"&Pws="+Pwscode;
+            var url     = "http://"+HTTP_IP+"PF4evs/Fecpay.php?jsonp=?";                  
+            callAjaxDo("",'j',url,options);
+          }
+}
+// ------------------------------------------------------------------------------- //
+function show_psp() {
+    /*$('#psp2').hide();  $('#psp1').show();
+    var whois=prompt("^_^... 您想做啥？...^_^","");
+    if (whois!="login backsite")  { $('#psp2').hide();  $('#psp1').show();  }
+    else                {*/
+        $('#psp1').hide();  $('#psp2').show();
+        $('#psp2 :input[type=text]').val(''); $('#psp2 :input[type=PASSWORD]').val('');
+        $('#psp2 :input[name=txtAct]').focus();
+        setTimeout('javascript:$("#psp1").show(); $("#psp2").hide();',80000);
+                        //}
+}
+</script>
+<div id="div_Fd1" ><img style="float: right; margin-right: 20px;" src="images/karasumi_pagebt.gif" /></div>
+<div id="div_Fd2" >
+    <div style="float: right; margin-right: 20px;">
+    <p><span id="psp1" style="display: block;"><a ondblclick="show_psp();" >&copy;</a> 2011 forevers and its suppliers. All rights reserved.</span>
+       <span id="psp2" style="display: none;">帳號：<input name="txtAct" type="text" value="" size="15" onkeyup="up(this)"/>
+                                              密碼：<input name="txtPasswd" type="PASSWORD" value="" size="15"/>
+                                                  　<input name="btn" id="btn" type="button" onclick="chkconf();" value="完成送出" />
+                                                  　&copy; 2011 forevers and its suppliers. All rights reserved.
+       </span>
+    </p>
+    </div>  
+</div>
+<div id="divTmp" style="display:none;"></div>
+<!-- -----------------------------------------------------footer end ---------------------------------------------------------- -->
