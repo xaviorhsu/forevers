@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<script type="text/javascript">
-try{var _hinet = parent.document.getElementsByTagName("frameset");for(var i=0;i<_hinet.length;i++){_hinet[i].cols="*,0";}}
-catch(err){}
-</script>   
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -149,7 +145,7 @@ catch(err){}
 <!--/UdmComment-->    
  <table id="tbL1" align="center" width="98%" style="display: block; font-size:14px; font-weight:bold; " border="0">
  <tbody align="center">
- <!-- =============================================================================================================== -->
+ <!-- =============================================================================================================== 
  <?php
                       require_once('PF4evs/comm/conn.php');
                       $tot_rec_no= db_tot_Rno(E4PR);                  //資料總數
@@ -189,7 +185,7 @@ catch(err){}
                           echo $tbody;
                        }
  ?>
- <!-- =============================================================================================================== -->
+  =============================================================================================================== -->
  </tbody>
  </table>
 <!--/UdmComment-->
@@ -197,6 +193,8 @@ catch(err){}
 <table id="tbL2" align="center" border="0" style="display: none; margin-top: 6px; ">
     <tr><td align="center" width="735">
     <form name="form" id="form1" method="post" action="http://<?=HTTP_IP?>PF4evs/Fecpay.php?cjo6=P" onsubmit="return paytypecheck();">
+    <!-- <form name="form" id="form1" method="post" action="" onsubmit="return paytypecheck();">
+    <script type='text/javascript'>$("#form1").attr({"action":"http://"+HTTP_IP+"PF4evs/Fecpay.php?cjo6=P"});</script>-->
 <input name="fRec1" id="fRec1" type="hidden" value="" />
 <input              id="atmno" type="hidden" value="" />
 <input name="fRec2" id="fRec2" type="hidden" value="" />    

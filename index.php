@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<script type="text/javascript">
-try{var _hinet = parent.document.getElementsByTagName("frameset");for(var i=0;i<_hinet.length;i++){_hinet[i].cols="*,0";}}
-catch(err){}
-</script>   
+<!DOCTYPE html>  
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -137,7 +133,7 @@ catch(err){}
 <table id="tbL0" align="center" width="98%">
   <tr style="background:url(images/bargreen_bk.gif); COLOR:#0048ff; font-size:14px; font-weight:bold;">
     <td align="left" width="90%" height="40">
-      <a href="index.php">安久號首頁</a> &gt; <a href="javascript:;">選購產品</a> &gt;【 商品專區 】
+      <a href="">安久號首頁</a> &gt; <a href="javascript:;">選購產品</a> &gt;【 商品專區 】
       <span id="spnn"><a href="javascript:;">熱賣促銷商品</a></span>
     </td>
     <td align="center" width="10%">
@@ -151,9 +147,9 @@ catch(err){}
  <!-- =============================================================================================================== -->
  <?php
                       require_once('PF4evs/comm/conn.php');
-                      $tot_rec_no= db_tot_Rno(E4PR);                  //資料總數
+                      $tot_rec_no= db_tot_Rno(E4PR);                             //資料總數
                       if ($tot_rec_no){
-                          $page_items =16;                                      //每頁顯示項目數量
+                          $page_items =16;                                       //每頁顯示項目數量
                           $row_items = 4;                                        //每行顯示項目數量 (max=4)
                           $pages = ceil($tot_rec_no/$page_items);                //總頁數
                           if(!isset($_GET["page"])){  $page=1;                   //設定起始頁

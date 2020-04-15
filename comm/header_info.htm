@@ -17,7 +17,8 @@
 <script type="text/javascript" language="javascript">
 var Bd6=null; vaL1=null; vaL2=null; vaL3=null; vaL4=null;
 var odRd={'piNo':vaL1,'piDs':vaL2,'piPr':vaL3,'piCn':vaL4};
-    HTTP_IP='supreme0155-4.myweb.hinet.net/forevers/';            //  114.33.140.96/forevers/        websrv.local.tw/forevers/
+//websrv.local.tw/114.33.140.96      https://xaviorhsu.github.io/
+var HTTP_IP=location.hostname+"/forevers/";
 // =========================================================================================
 $(document).ready(function()  {
     var type=(Math.floor(Math.random()*2)==1)?'fade':'slide';
@@ -46,7 +47,7 @@ $(document).ready(function()  {
         if ($(this).attr("id")=='li_mm1')
               { $('#li_jj1,#li_jj2,#li_jj3,#li_jj4,#li_jj5,#li_jj6').css('background-color','');
                 $('#uh,#div_Bd').css('display','none'); $('#uhj,#div_Bdj,#div_Bd1').css('display','block'); }
-        else  { $('#li_mm1').attr("href","index.html").text("首　 　頁"); $('#div_Bd').css('display','block');     
+        else  { $('#li_mm1').attr("href","").text("首　 　頁"); $('#div_Bd').css('display','block');     
                 switch ($(this).text()) {
                         case '購物流程'    :{i=4;j=0;} break; case '購物方式'    :{i=4;j=1;} break; case '消費爭議':{i=4;j=2;} break;
                         case '烏魚子的由來':{i=3;j=0;} break; case '烏魚子的保存':{i=3;j=1;} break;
@@ -56,7 +57,7 @@ $(document).ready(function()  {
                         default            :{var i=($(this).attr("id").substring(5));j=0; }  break;
                 }      
                 $('#'+mainitem[i]+((j==0)?'':j)).css('display','block'); Bd6=(i==6)?true:false;
-                if($(this).text()=='選購產品')  dStr="熱賣促銷商品";                
+                if($(this).text()=='選購產品')  dStr="熱賣促銷商品";  else  dStr="最新上架商品";              
                 $('#spnn').html('<a href="javascript:;">'+dStr+'</a>');
               }
               
@@ -316,7 +317,7 @@ function paytypecheck() {
           //saveStorage_S('fRec2');
           /*var a= document.location.href; var n1=a.lastIndexOf('/');  var n2=a.substring(0,n1).lastIndexOf('/')+1;
           alert('<== '+a+" ==>");alert('<== '+n1+" ==>");alert('<== '+a.substring(0,n1)+" ==>"); alert('<== '+a.substring(0,n2)+" ==>"); 
-          top.location="http://"+HTTP_IP+"PF4evs/Fecpay.php?cjo6=P&home="+a.substring(0,n2)+"index.html";*/
+          top.location="http://"+HTTP_IP+"PF4evs/Fecpay.php?cjo6=P&home="+a.substring(0,n2)+"index.php";*/
                       return true; }
         else          return false;
 }
@@ -356,7 +357,7 @@ jQuery("#li_mm3,#uv3 li").mouseover(function(){jQuery("#uv3").show();}).mouseout
 </script>
     </li>
     <li><a id="li_mm2" href="javascript:;" >安久號簡介</a></li>
-    <li><a id="li_mm1" href="javascript:;" >日本語首頁</a></li> <!--<li><a id="li_mm0" href="index.html"    ></a></li>-->
+    <li><a id="li_mm1" href="javascript:;" >日本語首頁</a></li> <!--<li><a id="li_mm0" href="index.php"    ></a></li>-->
 </ul>
 <ul id="uhj" style="display: none;" >
     <li><a id="li_jj6" href="javascript:;" title="會員登(加)入" >ロッグイン</a></li>    
