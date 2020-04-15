@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -147,7 +148,7 @@
  <!-- =============================================================================================================== -->
  <?php
                       require_once('PF4evs/comm/conn.php');
-                      $tot_rec_no= db_tot_Rno(E4PR);                             //資料總數
+                      $tot_rec_no= db_tot_Rno($conn,E4PR);                             //資料總數
                       if ($tot_rec_no){
                           $page_items =16;                                       //每頁顯示項目數量
                           $row_items = 4;                                        //每行顯示項目數量 (max=4)
@@ -159,7 +160,7 @@
                                    $page = ($pages > $page) ? $page : $pages;    //確認使用者沒有輸入太神奇的數字 
                                  }
                           $start = ($page-1)*$page_items; //每頁起始資料序號
-                          $res   = db_con_lis(E4PR,$start,$page_items);
+                          $res   = db_con_lis($conn,E4PR,$start,$page_items);
                           $i=0; $tbody="";
           								while ($line = db_fetch_assoc($res)) {            								 
                               $tbody.=($i%$row_items)?"":"<tr style='color:brown'>";
